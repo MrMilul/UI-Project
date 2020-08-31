@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./style.css">
+     <script src="./review.js"></script>
+     <title>Document</title>
+</head>
+
+<body>
+     <div class="header container">
+          <header>
+               <div class="brand">
+                    <h1>Logo</h1>
+               </div>
+               <div class="nav-bar bar">
+                    <nav>
+                         <ul class="nav-list">
+                              <li><a href="">Home</a></li>
+                              <li><a href="">About Us</a></li>
+                              <li><a href="">Portfolio</a></li>
+                              <li><a href="">Contact Us</a></li>
+                              
+
+                         </ul>
+                    </nav>
+                    <div class="nav-button">
+                         <a href="#">Hire Us!</a>
+                    </div>
+                  
+               </div> 
+               <div class="ham">
+                    <div class="bar"></div>
+               </div>
+          </header>
+     </div>
+     <div class="main"></div>
+     <script>
+          document.querySelector('.ham').addEventListener('click', ()=>{
+               document.querySelectorAll(".bar").forEach(value=>value.classList.toggle('chk'))
+          })
+     </script>
+</body>
+
+</html>
