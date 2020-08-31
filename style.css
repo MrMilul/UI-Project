@@ -9,7 +9,64 @@ html{
 .main{
      width: 100%; 
      height: 100vh; 
-     background-color: blueviolet;
+     background-color: rgb(15, 14, 15);
+     display: flex; 
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+     transform: 1s ease-in-out all;
+}
+.main .text-anim{
+   font-size: 50px;
+   color: transparent;
+   position: relative;
+   animation: anim2 2s ease forwards;
+   animation-delay: 1s;
+}
+.main .text-anim::after{
+     position: absolute;
+     content: ''; 
+     width:0;
+     height: 100%; 
+     left: 0; 
+     top: 0; 
+     background-color: tomato;
+     animation: anim1 2s ease-in;
+}
+@keyframes anim1{
+     50%{
+          width: 100%;
+          left:0;
+     }
+     100%{
+          width:0; 
+          left: 100%; 
+     }
+
+}
+@keyframes anim2{
+     100%{
+          color: white
+     }
+}
+.main .hero{
+    
+     background-color: teal;
+     width:500px;
+     height:500px;
+     background: url(./firstavatar.png);
+     background-size: cover; 
+     position: relative;
+     margin-top: 30px;
+}
+.main .hero::after{
+     content: '';
+     position: absolute;
+     left:0;
+     top:0;
+     background-color: rgba(0, 0, 0, 0.452);
+     width: 100%; 
+     height: 100%;
 }
 .container{
      width: 100%; 
@@ -17,15 +74,15 @@ html{
      display: flex;
      justify-content: center;
      align-items: center;
-    
-}
-.header{
-     width: 85%;
+     background-color: teal;
      padding: 1rem 0;
      margin: 0 auto;
     
 }
 
+header .brand{
+     margin-left: 30px;
+}
 .header header{
      width: 100%; 
      display: flex;
@@ -47,6 +104,9 @@ html{
      background-color: gray;
      transition: .5s ease-in-out all;
      transform: translateX(100%);
+     margin-right: 50px;
+     z-index: 1;
+     
 }
 .header header .nav-bar.chk{
      transform: translateX(0);
@@ -125,7 +185,7 @@ html{
      transform: rotate(-45deg);
 }
 .header .ham .bar.chk{
-     background-color: white;
+     background-color: transparent;
 }
 
 @media only screen and (min-width: 1200px){
@@ -169,6 +229,9 @@ html{
      .header header .nav-bar .nav-button a{ 
           font-size: 1.2rem;
          
+     }
+     .main{
+          flex-direction: row;
      }
 
 
